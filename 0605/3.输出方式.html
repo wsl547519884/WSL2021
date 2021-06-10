@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+    <input type="text" id="userName">
+    <script>
+        /* // 在控制台输出，特点是：输出任意数据类型的数据，控制台展示的也是对应的数据类型
+        console.log({
+            name: "珠峰"
+        });
+        // =>console.dir输出一个对象或者一个值的详细信息
+        function fun() {};
+        console.log(fun);
+        console.dir(fun);
+        console.warn('警告'); // 警告的方式输出
+        let arr = [{
+            id: 1,
+            name: 'zhu'
+        }, 1, {
+            id: 2,
+            name: 'feng'
+        }];
+        console.log(arr);
+        console.table(arr);
+
+        console.time('a');
+        for (let i = 1; i > 99999; i++) {
+
+        }
+        console.timeEnd('a'); */
+
+        // =>alert 是在浏览器窗口中弹出一个提示框，提示框中输出指定的信息
+        // +需要等待alert弹出框，点击确定关闭后。后面的代码才会执行（alert会阻碍渲染）
+        /* alert("addd");
+        console.log(10); */
+        // alert输出的都是字符串
+        // alert([1,2,3]);
+        // alert(1);
+        // let n = confirm("今天好嘛");  //给用户提供了确定和取消两种选择
+        // console.log(n);
+        // =>prompt在confirm的基础上给用户提供书写操作的原因等信息
+        // 点击取消返回null 点击确定返回原因
+        /* let n = prompt("今天吃了吗？");
+        console.log(n); */
+
+        // ======
+        // 把内容写入到页面中，会先转为字符串然后在写入
+        /* document.write("aa");
+        document.write(10);
+        document.write({name:"z"}); */
+        let box = document.getElementById("box");
+        // box.innerText = '哈哈哈';
+        // box.innerHTML += '<em>哈哈哈哈</em>';
+        // box.innerText += '哈哈哈';
+        let userName = document.getElementById("userName");
+        userName.value = 10;
+    </script>
+</body>
+
+</html>

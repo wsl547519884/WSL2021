@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="box">
+        <li>1</li>
+        <li>2</li>
+        <li class="li3">3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        let box = document.querySelector(".box");
+        let li3 = box.querySelector(".li3");
+
+        /* function nextAll(node) {
+            /* let nodeList = node.parentNode.childNodes;
+            let arr = [];
+            // console.log(nodeList.length);
+            for (let i = nodeList.length - 1; i >= 0; i--) {
+                let item = nodeList[i];
+                // console.log(item);
+                if (item == node) break;
+                item.nodeType === 1 ? arr.unshift(item) : null;
+            }
+            return arr; 
+            let nextLi = node.nextSibling;
+            let arr = [];
+            // console.log(nextLi !== null);
+            while (nextLi !== null) {
+                nextLi.nodeType === 1 ? arr.push(nextLi) : null;
+                nextLi = nextLi.nextSibling;
+            }
+            return arr;
+        } */
+        /* function siblings(node) {
+            let nodeList = node.parentNode.childNodes;
+            let arr = [];
+            for (let i = 0; i < nodeList.length; i++) {
+                if (nodeList[i].nodeType !== 1 || nodeList[i] === node) {
+                    continue;
+                }
+                arr.push(nodeList[i]);
+            };
+            return arr;
+        } */
+        /* function index(node) {
+
+        }
+        console.log(siblings(li3)); */
+    </script>
+</body>
+
+</html>

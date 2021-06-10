@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.min.css">
+    <style>
+        .box {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .tab li {
+            float: left;
+            height: 35px;
+            line-height: 35px;
+            padding: 0 10px;
+            margin-right: 5px;
+            font-size: 14px;
+            border: 1px solid #000;
+            background-color: #eeeeee;
+        }
+
+        .tab li.active {
+            border-bottom: 1px solid #fff;
+            background-color: #fff;
+        }
+
+        div {
+            box-sizing: border-box;
+            display: none;
+            width: 500px;
+            height: 200px;
+            font-size: 15px;
+            padding-top: 20px;
+            border: 1px solid #000;
+            margin-top: -1px;
+        }
+
+        div.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="box">
+        <ul class="tab clearfix">
+            <li class="active">编程</li>
+            <li>读书</li>
+            <li>运动</li>
+        </ul>
+        <div class="active">编程使我快乐</div>
+        <div>读书使我快乐</div>
+        <div>运动使我快乐</div>
+    </section>
+    <script>
+        let itemList = document.getElementsByTagName("li"),
+            divList = document.getElementsByTagName("div");
+        /* for (var i = 0; i < itemList.length; i++) {
+            itemList[i].l = i;
+            // console.dir(divList[i]);
+            itemList[i].onclick = function () {
+                for (var i = 0; i < itemList.length; i++) {
+                    itemList[i].className = "";
+                    divList[i].className = "";
+                }
+                this.className = "active";
+                divList[this.l].className = "active";
+            }
+        } */
+
+        for (var i = 0; i < itemList.length; i++) {
+            /* (function (index) {
+                itemList[index].onclick = function () {
+                    for (var j = 0; j < itemList.length; j++) {
+                        itemList[j].className = "";
+                        divList[j].className = "";
+                    }
+                    this.className = "active";
+                    divList[index].className = "active";
+                }
+            })(i); */
+            itemList[i].onclick = (function (index) {
+                return function () {
+                    for (var j = 0; j < itemList.length; j++) {
+                        itemList[j].className = "";
+                        divList[j].className = "";
+                    }
+                    this.className = "active";
+                    divList[index].className = "active";
+                };
+            })(i);
+        };
+    </script>
+</body>
+
+</html>

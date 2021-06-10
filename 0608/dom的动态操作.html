@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">增加</button>
+    <ul class="item">
+        <li>我是li1<button class="deleteBtn">x</button></li>
+    </ul>
+
+    <script>
+        let btn = document.querySelector("#btn"),
+            itemList = document.querySelector(".item"),
+            deleteBtn = document.querySelector(".deleteBtn");
+        let count = 1;
+        btn.onclick = function () {
+            let newLi = document.createElement("li");
+            newLi.innerHTML = `我是li${++count}<button>x</button>`;
+            let firstLi = itemList.firstElementChild;
+            itemList.insertBefore(newLi,firstLi);
+            /* itemList.appendChild(newLi); */
+        };
+        deleteBtn.onclick = function () {
+            let parent = this.parentNode;
+            itemList.remove(parent);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid #000;
+            font-size: 25px;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="codeBox">ADFG</div>
+
+    <script>
+        /* let codeBox = document.getElementById("codeBox");
+        function createCode() {
+            let str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            let codeText = "";
+            for (let i = 1; i <= 4; i++) {
+                let ran = Math.round(Math.random() * 61);
+                let char = str.charAt(ran);
+                codeText += char;
+            }
+            codeBox.innerText = codeText;
+            return codeText;
+        };
+        createCode();
+        codeBox.onclick = createCode; */
+    </script>
+    <script>
+        let codeBox = document.getElementById("codeBox");
+
+        function createCode() {
+            let str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            let codeText = "";
+            /* for (let i = 1; i <= 4;) {
+                let ran = Math.round(Math.random() * 61);
+                let char = str.charAt(ran);
+                if (!codeText.toUpperCase().includes(char.toUpperCase())) {
+                    codeText += char;
+                    i++;
+                };
+                codeBox.innerText = codeText;
+            }; */
+            while (codeText.length < 4) {
+                let ran = Math.round(Math.random() * 61);
+                let char = str.charAt(ran);
+                if (!codeText.toUpperCase().includes(char.toUpperCase())) {
+                    codeText += char;
+                };
+                codeBox.innerText = codeText;
+            }
+        };
+        createCode();
+        codeBox.onclick = createCode;
+    </script>
+</body>
+
+</html>

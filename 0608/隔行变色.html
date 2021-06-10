@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.min.css">
+</head>
+
+<body>
+    <ul id="newsItem">
+        <li>1.编程使我快乐</li>
+        <li>2.编程使我快乐</li>
+        <li>3.编程使我快乐</li>
+        <li>4.编程使我快乐</li>
+        <li>5.编程使我快乐</li>
+    </ul>
+    <script>
+        let newsItem = document.getElementById("newsItem"),
+            liList = newsItem.getElementsByTagName("li");
+        for (var i = 0; i < liList.length; i++) {
+            let bg = "white";
+            if (i % 2 === 0) bg = "red";
+            liList[i].bg = bg;
+            liList[i].style.backgroundColor = bg; 
+            liList[i].onmouseover = function () {
+                this.style.backgroundColor = "blue"; 
+            };
+            // console.log(liList[i].bg);
+            liList[i].onmouseout = function () {
+                this.style.backgroundColor = this.bg; 
+            };
+        }
+    </script>
+</body>
+
+</html>

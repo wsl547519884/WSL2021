@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1. 闰年/平年 -->
+    <!-- <input type="text" id="inp">
+    <button id="btn">该年份为闰年还是平年</button>
+    <h6></h6> -->
+
+    <!-- 2. 奇偶数 -->
+    <!-- <input type="text" id="inp">
+    <button id="btn">为奇数还是偶数</button>
+    <h6></h6> -->
+
+    <!-- 3. 成绩等级 -->
+    <!-- <input type="text" id="inp">
+    <button id="btn">成绩等级</button>
+    <h6></h6> -->
+
+    <!-- 4. 公司年终奖 -->
+    <!-- 工作年限：<input type="text" class="inp"></br>
+    工作薪资：<input type="text" class="inp"></br>
+    <button id="btn">年终奖</button>
+    <h6></h6> -->
+
+    <!-- 5. 加油站 -->
+    <select id="sel">
+        <option value="92" selected>#92</option>
+        <option value="97">#97</option>
+    </select>
+    加<input type="text" id="inp">升
+    <button id="btn">价格为</button>
+    <h6></h6>
+    <script>
+        // 加油站
+        let sel = document.getElementById("sel"),
+            inp = document.getElementById("inp"),
+            btn = document.getElementById("btn"),
+            h6 = document.getElementsByTagName("h6")[0];
+        let result = null,
+            rise = null;
+        btn.onclick = function () {
+            result = Number(sel.value);
+            rise = Number(inp.value);
+            console.log(result,rise);
+            if (rise < 0 || result == "" || rise == "") {
+                alert("文本框不能为空或者你输入有误！");
+                inp.value = "";
+            } else if (result === 92) {
+                if (rise >= 20) {
+                    h6.innerText = `${(rise * 5.9).toFixed(2)}元`;
+                } else {
+                    h6.innerText = `${(rise * 6).toFixed(2)}元`;
+                }
+            } else {
+                if (rise >= 30) {
+                    h6.innerText = `${(rise * 6.95).toFixed(2)}元`;
+                } else {
+                    h6.innerText = `${(rise * 7).toFixed(2)}元`;
+                }
+            }
+        }
+        // 闰年/平年
+        /* let inp = document.getElementById("inp"),
+            btn = document.getElementById("btn"),
+            h6 = document.getElementsByTagName("h6")[0];
+        let year = null;
+        btn.onclick = function () {
+            year = inp.value;
+            console.log(year);
+            if (year < 1000 || year > 9999 || isNaN(year)) {
+                alert("文本框不能为空！");
+            } else if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+                h6.innerText = "这是闰年";
+            } else {
+                h6.innerText = "这是平年";
+            }
+        }; */
+
+        // 奇偶数
+        /* let inp = document.getElementById("inp"),
+            btn = document.getElementById("btn"),
+            h6 = document.getElementsByTagName("h6")[0];
+        let number = inp.value;
+        btn.onclick = function () {
+            number = inp.value;
+            console.log(number);
+            if (number == "" || isNaN(number)) {
+                alert("文本框不能为空！");
+            } else if (number % 2 === 0) {
+                h6.innerText = "这是偶数";
+            } else {
+                h6.innerText = "这是奇数";
+            }
+        }; */
+
+        // 成绩等级
+        /* let inp = document.getElementById("inp"),
+            btn = document.getElementById("btn"),
+            h6 = document.getElementsByTagName("h6")[0];
+        let result = inp.value;
+        btn.onclick = function () {
+            result = inp.value;
+            if (result == "") {
+                alert("文本框不能为空！");
+            } else if (result >= 90 && result <= 100) {
+                h6.innerText = "优秀";
+            } else if (result >= 80) {
+                h6.innerText = "中等";
+            } else if (result >= 70) {
+                h6.innerText = "及格";
+            } else {
+                h6.innerText = "不及格";
+            }
+        } */
+
+        // 年终奖
+        /* let inp = document.getElementsByClassName("inp"),
+            btn = document.getElementById("btn"),
+            h6 = document.getElementsByTagName("h6")[0];
+        let year = null,
+            money = null;
+        console.log(inp);
+        btn.onclick = function () {
+            year = Number(inp[0].value);
+            money = Number(inp[1].value);
+            if (money < 0 || year < 0 || year == "" || money == "") {
+                alert("文本框不能为空或者你输入有误！");
+                inp[0].value = "";
+                inp[1].value = "";
+            } else if (year >= 0 && year < 1) {
+                if (money >= 8000) {
+                    h6.innerText = `${(money * 1.2).toFixed(2)}元`;
+                } else {
+                    h6.innerText = `${Number(money).toFixed(2)}元`;
+                }
+            } else if (year >= 1 && year < 2) {
+                if (money >= 10000) {
+                    h6.innerText = `${(money * 1.7).toFixed(2)}元`;
+                } else {
+                    h6.innerText = `${(money * 1.5).toFixed(2)}元`;
+                }
+            } else if (year >= 2) {
+                if (money >= 12000) {
+                    h6.innerText = `${(money * 3.2).toFixed(2)}元`;
+                } else {
+                    h6.innerText = `${(money * 3).toFixed(2)}元`;
+                }
+            }
+        }; */
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let time = "2020/3/11 14:10:0";
+
+        let arr = [];
+        arr = time.split(" ");
+        let arr1 = arr[0].split("/"),
+            arr2 = arr[1].split(":");
+        /* arr1 = arr1.map((item, index) => {
+            if (item.length < 2) {
+                item = '0' + item;
+            }
+            return item;
+        });
+        arr2 = arr2.map((item, index) => {
+            if (item.length < 2) {
+                item = '0' + item;
+            }
+            return item;
+        }); */
+        arr = arr1.concat(arr2);
+        console.log(arr);
+        arr = arr.map(item => item.length < 2 ? "0" + item : item);
+        // console.log(`${arr1[0]}年${arr1[1]}月${arr1[2]}日 ${arr2[0]}时${arr2[1]}分${arr2[2]}秒`);
+        console.log(`${arr[0]}年${arr[1]}月${arr[2]}日 ${arr[3]}时${arr[4]}分${arr[5]}秒`);
+    </script>
+</body>
+
+</html>

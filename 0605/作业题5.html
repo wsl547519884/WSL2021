@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">点击更换body皮肤(白->红->蓝->绿->黑->白)</button>
+    <script>
+        let btn = document.getElementById("btn"),
+            body = document.body;
+        let bg = body.style.backgroundColor;
+        btn.onclick = function () {
+            switch (bg) {
+                case 'red':
+                    body.style.backgroundColor = 'blue';
+                    break;
+                case 'blue':
+                    body.style.backgroundColor = 'green';
+                    break;
+                case 'green':
+                    body.style.backgroundColor = 'black';
+                    break;
+                case 'black':
+                    body.style.backgroundColor = 'white';
+                    break;
+                default:
+                    body.style.backgroundColor = 'red';
+            }
+            bg = body.style.backgroundColor;
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            
+        </ul>
+    </div>
+    <script>
+        /* number数据类型
+            Infinity 无穷大
+            NaN 非有效数字，但是输入number类型
+            在使用isNaN进行检测时，如果检测的值是非有效数字类型的，先转换成数字类型
+            parseInt
+            parseFloat
+
+            true false true false false true true false true 报错
+
+        */
+        console.log(Number(undefined));
+        console.log(1 == '1');
+        /* let year = '2020';
+        let month = '03';
+        let day = '02';
+        let hours = '11';
+        let minutes = '52';
+        let seconds = '51';
+        console.log(year + '年' + month + '月');
+        let str = `<ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            </ul>`;
+        let box = document.getElementsByClassName("box");
+        box.innerHTML = str;
+        console.log(box); */
+
+        let m = 100;
+        let obj = {};
+        obj[m] = 100;
+        m = 200;
+        obj[m] = 200;
+        obj[null] = 11;
+        obj['null'] = 22;
+        console.log(obj,m);
+    </script>
+</body>
+
+</html>
